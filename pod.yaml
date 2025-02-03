@@ -10,8 +10,7 @@ spec:
     imagePullPolicy: Always
     args: [ "--dockerfile=./Dockerfile",
             "--context=git://github.com/pushdown99/jenkins-webhook.git",
-            "--destination=pushdown99/kaniko-demo",
-            "--cleanup" ]
+            "--destination=pushdown99/kaniko-demo" ]
     volumeMounts: 
     - name: kaniko-secret
       mountPath: /kaniko/.docker/
