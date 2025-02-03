@@ -10,12 +10,13 @@ spec:
     imagePullPolicy: Always
     args: [ "--dockerfile=./Dockerfile",
             "--context=git://github.com/pushdown99/jenkins-webhook.git",
-            "--destination=pushdown99/kaniko-demo" ]
-    volumeMounts: #  volumeMount or env 선택
+            "--destination=pushdown99/kaniko-demo",
+            "--cleanup" ]
+    volumeMounts: 
     - name: kaniko-secret
       mountPath: /kaniko/.docker/
   restartPolicy: Never
-  volumes: #  env 선택 시 불필요
+  volumes: 
   - name: kaniko-secret
     secret:
       secretName: regcred
